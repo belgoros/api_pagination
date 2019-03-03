@@ -1,24 +1,10 @@
-# README
+# Example of use of api-pagination gem with will_paginate
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Set up
 
-Things you may want to cover:
+* `bundle` to install dependencies
+* `rails db:setup` to set up the database and populate it with fake data (see `seeds.rb` for more details)
+* run `http://localhost:3000/posts` do display first 30 posts.
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
