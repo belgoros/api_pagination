@@ -3,14 +3,13 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
-
-    paginate json: @posts
+    @posts = paginate Post.all
+    render jsonapi: @posts
   end
 
   # GET /posts/1
   def show
-    render json: @post
+    render jsonapi: @post
   end
 
   # POST /posts
@@ -18,18 +17,18 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      render json: @post, status: :created, location: @post
+      render jsonapi: @post, status: :created, location: @post
     else
-      render json: @post.errors, status: :unprocessable_entity
+      render jsonapi: @post.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
-      render json: @post
+      render jsonapi: @post
     else
-      render json: @post.errors, status: :unprocessable_entity
+      render jsonapi: @post.errors, status: :unprocessable_entity
     end
   end
 
